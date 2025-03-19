@@ -1,9 +1,10 @@
-[language-server]
-emmet-ls = { command = "emmet-ls", args = [ "--stdio" ]}
+[language-server.emmet-ls]
+command = "emmet-language-server"
+args = [ "--stdio" ]
 
 [language-server.eslint]
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
+command = "eslint-language-server"
+args = [ "--stdio" ]
 
 [language-server.eslint.config]
 codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
@@ -40,6 +41,7 @@ auto-format = true
 
 [[language]]
 name = "tsx"
+language-servers = [ "eslint", "typescript-language-server", "emmet-ls" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
 
